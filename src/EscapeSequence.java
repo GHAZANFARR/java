@@ -1,4 +1,4 @@
-public class escapeSequence {
+public class EscapeSequence {
     public static void main (String[] args){
         String Seq = "this is the example of escape Sequence";
         System.out.println(Seq);

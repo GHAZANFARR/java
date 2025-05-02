@@ -1,7 +1,6 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
-public class userInput {
+public class UserInput {
     public static void main(String[] args) { //sout
         Scanner input = new Scanner(System.in);
         System.out.println("please enter your name: ");
