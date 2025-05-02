@@ -21,7 +21,7 @@ public class Starloop {
         } else {
             System.out.println("you didn't entered a valid triangle type");
             scanner.close();
-            return;
+            return; // not necessary, just for practice
         }
     }
 
