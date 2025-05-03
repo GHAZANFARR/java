@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class prac {
+public class Tables {
 
     public static void main(String[] args) {
         int a = 1;

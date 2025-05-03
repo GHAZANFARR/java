@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class prac2 {
+public class BitwiseOddEven {
     public static void main(String[] args) {
         int x = num();
         boolean isOdd = (x & 1) == 1;
