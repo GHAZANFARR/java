@@ -4,14 +4,13 @@ public class prac {
     public static void main(String[] args) {
         int i = 1;
         int N = input();
-        int sum = 0;
-        while(i <= N) {
-            if (i % 2 != 0){
-                sum += 1;
-            }
+        int sum = 1;
+
+        while (i <= N) {
+            sum *= i;
             i++;
         }
-        System.out.println("The sum of odd numbers from 1 to " + N + " is: " + sum);
+        System.out.println("sum is: " + sum);
     }
 
     public static int input(){
