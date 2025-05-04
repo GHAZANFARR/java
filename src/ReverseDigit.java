@@ -1,15 +1,17 @@
 
 import java.util.Scanner;
 
-public class Factorial {
+public class ReverseDigit {
     public static void main(String[] args) {
         int b = num();
-        int c = 1;
+        int dis;
+        int newNum= 0;
         while (b > 0) {
-            c *= b;
-            b--;
+            dis = b % 10;
+            newNum = newNum * 10 + dis;
+            b /= 10;
         }
-        System.out.println("factorial is: " + c);
+        System.out.println("reverse num of input is: " + newNum);
     }
 
     public static int num() {
