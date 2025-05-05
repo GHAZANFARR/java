@@ -5,19 +5,17 @@ public class prac {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome To The Program");
-        System.out.println("Enter your first number: ");
+        System.out.println("Enter your number: ");
         int first = scanner.nextInt();
-        System.out.println("Enter your second number: ");
-        int second = scanner.nextInt();
-
+        loop(first);
     }
 
-    public static int loop(int first, int second) {
-        int greater = Math.max(first, second);
+    public static void loop(int first) {
+        int i = first;
 
-        while(true) {
-            if (greater % first == 0 && greater % second == 0) {
-                return greater;
+        while(i > 0) {
+            System.out.println(i);
+            i--;
             }
         }
     }
