@@ -11,12 +11,8 @@ public class prac {
     }
 
     public static void loop(int first) {
-        int i = first;
-
-        while(i > 0) {
-            System.out.println(i);
-            i--;
-            }
+        for (int i=1; i <= first; i++){
+            System.out.println(first + "x" + i + "=" + (first * i));
         }
     }
 }
