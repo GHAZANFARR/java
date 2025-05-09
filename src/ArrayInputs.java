@@ -21,7 +21,7 @@ public class ArrayInputs {
 
         int[][] matrix = new int[3][3]; // A 3x3 matrix
 
-        int[][] matrix = {   // Initializing a 2D array
+        int[][] matrix2 = {   // Initializing a 2D array
                 {1, 2, 3},
                 {4, 5, 6},
                 {7, 8, 9}
