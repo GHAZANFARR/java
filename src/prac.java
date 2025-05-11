@@ -9,6 +9,11 @@ public class prac {
 
         int[] array= new int[size];
 
+        for (int i = 0; i < size; i++) {
+            System.out.println("enter the index: ");
+            i = scanner.nextInt();
+        }
+
         int total = sum(array);
         System.out.println("sum is: " + total);
 
