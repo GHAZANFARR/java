@@ -15,6 +15,18 @@ public class prac {
             array[i] = scanner.nextInt();
         }
 
+        int total = sum(array);
+        System.out.println("total is: " + total);
 
+        System.out.println("average of the array is: " + (total / size));
+
+    }
+
+    public static int sum(int[] array) {
+        int sum = 0;
+        for(int num : array) {
+            sum += num;
+        }
+        return sum;
     }
 }
