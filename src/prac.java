@@ -4,32 +4,32 @@ public class prac {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("enter the size of the array: ");
+        System.out.println("enter the array size: ");
         int size = scanner.nextInt();
 
-        int[] array= new int[size];
+        int[] array = new int[size];
 
         for (int i = 0; i < size; i++) {
-            System.out.println("enter the index: ");
-            i = scanner.nextInt();
+            System.out.println("enter the numbers of array: ");
+            array[i] = scanner.nextInt();
         }
+        System.out.println("enter the number you want to check: ");
+        int input = scanner.nextInt();
 
-        int total = sum(array);
-        System.out.println("sum is: " + total);
+        int occ = occ(array, input);
 
-        int average = total / size;
-        System.out.println("average is: " + average);
-
+        System.out.println("the number of occourances of " + occ + " are: ");
     }
 
-    public static int sum(int[] array) {
+    public static int occ(int[] array, int input) {
 
-        int sum = 0;
-        for (int num : array) {
-            sum += num;
+        int occ = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == input) {
+                occ++;
+            }
         }
-        return sum;
-}
 
-
+        return occ;
+    }
 }
