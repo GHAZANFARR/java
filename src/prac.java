@@ -11,7 +11,7 @@ public class prac {
 
         for (int i = 0; i < size; i++) {
             System.out.println("enter the numbers of array: ");
-            array[i] = scanner.nextInt();
+            array[i] = scanner.nextInt(); //hello
         }
 
 
