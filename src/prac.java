@@ -18,7 +18,7 @@ public class prac {
         }
 
         int[] reverseArray = reverseArray(array);
-        System.out.println(Arrays.toString(reverseArray));
+        System.out.println("reverse array is: "+ Arrays.toString(reverseArray));
     }
 
     public static int[] reverseArray(int[] array) {
