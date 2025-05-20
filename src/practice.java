@@ -2,11 +2,17 @@ import java.util.Scanner;
 
 public class practice {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
         int[][] matrix = input();
 
         System.out.println("the matrix is: ");
         print(matrix);
+
+        System.out.println("enter the number you want to search: ");
+        int num = scanner.nextInt();
+
+        search(matrix, num);
 
     }
 
@@ -41,4 +47,23 @@ public class practice {
             }
         }
     } //printing the matrix
+
+    public static void search(int[][] matrix, int num) {
+
+        boolean found = false;
+        for(int[] row : matrix){
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[i].length; j++) {
+                    if (matrix[i][j] == num){
+                        System.out.println("num found at row: " + i + ", column: " + j);
+                    }
+                    found = true;
+                }
+            }
+        }
+        if (!found) {
+            System.out.println("your number is not in matrix");
+        }
+
+    }
 }
