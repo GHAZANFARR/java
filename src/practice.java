@@ -51,12 +51,10 @@ public class practice {
     public static void search(int[][] matrix, int num) {
 
         boolean found = false;
-        for(int[] row : matrix){
-            for (int i = 0; i < matrix.length; i++) {
-                for (int j = 0; j < matrix[i].length; j++) {
-                    if (matrix[i][j] == num){
-                        System.out.println("num found at row: " + i + ", column: " + j);
-                    }
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] == num){
+                    System.out.println("num found at row: " + i + ", column: " + j);
                     found = true;
                 }
             }
@@ -64,6 +62,5 @@ public class practice {
         if (!found) {
             System.out.println("your number is not in matrix");
         }
-
-    }
+    } //searching the required number and printing it
 }
