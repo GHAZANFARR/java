@@ -3,5 +3,6 @@ public class Driver {
 
         Cars myCar = new Cars();
 
+        myCar.drive();
     }
 }
