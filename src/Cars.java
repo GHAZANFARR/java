@@ -136,6 +136,19 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
              car.getCurrentFuel();
          }
 
+         System.out.print("does the driver drives the car?? (yes/no): ");
+         String driving = scanner.nextLine();
+
+         boolean drive = false;
+         if (driving.equalsIgnoreCase("yes")) {
+             System.out.println("how many units did car drove?? : ");
+             float units = scanner.nextFloat();
+             scanner.nextLine();
+             for (int i = 0; i < units; i++) {
+                 car.drive();
+             }
+         }
+
          System.out.println(car.currentSpeed);
          System.out.println(car.currentFuelInLiters);
          System.out.println(car.color);
