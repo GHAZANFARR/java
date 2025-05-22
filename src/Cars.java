@@ -1,4 +1,4 @@
-public class InstanceVariablesAndMethods { //taking it for a car as an example
+  public class Cars { //taking it for an "Instance Variables And Methods" example
 
     int noOfWheels;
 
@@ -40,5 +40,4 @@ public class InstanceVariablesAndMethods { //taking it for a car as an example
         System.out.println("current speed is: " + currentSpeed);
         return currentSpeed;
     }
-
-}
+    }
