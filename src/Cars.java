@@ -1,20 +1,13 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Cars { //taking it for an "Instance Variables And Methods" example
 
      int noOfWheels;
-
      String color;
-
      int noOfSeats;
-
      float currentFuelInLiters;
-
      float currentSpeed;
-
      float maxSpeed;
-
      String fuelType;
 
      public void drive() {
@@ -24,15 +17,14 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
          } else System.out.println("Car is out of fuel:(");
      }
 
-     public void addFuel(float fuel) {
-         if (fuel > 0) {
-             currentFuelInLiters += fuel;
+     public void addFuel(float posFuel) {
+         if (posFuel > 0) {
+             currentFuelInLiters += posFuel;
          } else currentFuelInLiters = 0;
      }
 
-     public float getCurrentFuel() {
+     public void getCurrentFuel() {
          System.out.println("current fuel is: " + currentFuelInLiters);
-         return currentFuelInLiters;
      }
 
      public void acceleration(float posSpeed) {
@@ -47,9 +39,8 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
          } else currentSpeed = 0;
      }
 
-     public float getCurrentSpeed() {
+     public void getCurrentSpeed() {
          System.out.println("current speed is: " + currentSpeed);
-         return currentSpeed;
      }
 
      public static void main(String[] args) {
@@ -58,19 +49,35 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
 
          Cars car = new Cars();
 
-         System.out.println("enter the Current Fuel Level: ");
+         System.out.print("enter the Current Fuel Level: ");
          car.currentFuelInLiters = scanner.nextFloat();
          scanner.nextLine();
 
-         System.out.println("enter the Current Speed of Car: ");
-         car.currentSpeed = scanner.nextFloat();
+         System.out.print("enter the Fuel Type: ");
+         car.fuelType = scanner.nextLine();
          scanner.nextLine();
 
-         System.out.println("enter the Number of Wheels of Car: ");
+         System.out.print("enter the Max Speed of Car: ");
+         car.maxSpeed = scanner.nextFloat();
+         scanner.nextLine();
+
+         System.out.print("enter the Current Fuel Level: ");
          car.noOfWheels = scanner.nextInt();
          scanner.nextLine();
 
-         System.out.println("enter the Color of Car: ");
+         System.out.print("enter the Current Fuel Level: ");
+         car.noOfSeats = scanner.nextInt();
+         scanner.nextLine();
+
+         System.out.print("enter the Current Speed of Car: ");
+         car.currentSpeed = scanner.nextFloat();
+         scanner.nextLine();
+
+         System.out.print("enter the Number of Wheels of Car: ");
+         car.noOfWheels = scanner.nextInt();
+         scanner.nextLine();
+
+         System.out.print("enter the Color of Car: ");
          car.color = scanner.nextLine();
 
          boolean change = false;
@@ -81,17 +88,46 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
              change = true;
          }
          if (change) {
-             System.out.println("does speed increase or decrease: ");
+             System.out.print("does speed increase or decrease: ");
              String speedChange = scanner.nextLine();
                 if (speedChange.equalsIgnoreCase("increase")) {
-                    System.out.println("enter the increment in speed: ");
+                    System.out.print("enter the increment in speed: ");
                     float posSpeed = scanner.nextFloat();
                     car.acceleration(posSpeed);
                 } else {
-                    System.out.println("enter the decrement in speed: ");
+                    System.out.print("enter the decrement in speed: ");
                     float negSpeed = scanner.nextFloat();
                     car.deceleration(negSpeed);
                 }
+                car.getCurrentSpeed();
          }
+
+         boolean fuelChange = false;
+         System.out.print("does the Fuel Levels of car change? (yes/no): ");
+         String yesOrNo = scanner.nextLine();
+
+         if (yesOrNo.equalsIgnoreCase("yes")) {
+             fuelChange = true;
+         }
+         if (fuelChange) {
+             System.out.print("does fuel increase or decrease: ");
+             String fuelChangeInLiters = scanner.nextLine();
+             if (fuelChangeInLiters.equalsIgnoreCase("increase")) {
+                 System.out.print("enter the incremented in fuel: ");
+                 float posFuel = scanner.nextFloat();
+                 car.addFuel(posFuel);
+             } else {
+                 System.out.print("enter the decrement in fuel: ");
+                 float negFuel = scanner.nextFloat();
+                 car.currentFuelInLiters -= negFuel;
+             }
+             car.getCurrentFuel();
+         }
+
+         System.out.println(car.currentSpeed);
+         System.out.println(car.currentFuelInLiters);
+         System.out.println(car.color);
+         System.out.println(car.fuelType);
+
      }
  }
