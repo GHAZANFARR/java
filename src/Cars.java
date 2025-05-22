@@ -3,11 +3,17 @@ import java.util.Scanner;
 public class Cars { //taking it for an "Instance Variables And Methods" example
 
      int noOfWheels;
+
      String color;
+
      int noOfSeats;
+
      float currentFuelInLiters;
+
      float currentSpeed;
+
      float maxSpeed;
+
      String fuelType;
 
      public void drive() {
@@ -90,15 +96,18 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
          if (change) {
              System.out.print("does speed increase or decrease: ");
              String speedChange = scanner.nextLine();
+
                 if (speedChange.equalsIgnoreCase("increase")) {
                     System.out.print("enter the increment in speed: ");
                     float posSpeed = scanner.nextFloat();
                     car.acceleration(posSpeed);
+
                 } else {
                     System.out.print("enter the decrement in speed: ");
                     float negSpeed = scanner.nextFloat();
                     car.deceleration(negSpeed);
                 }
+
                 car.getCurrentSpeed();
          }
 
@@ -112,15 +121,18 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
          if (fuelChange) {
              System.out.print("does fuel increase or decrease: ");
              String fuelChangeInLiters = scanner.nextLine();
+
              if (fuelChangeInLiters.equalsIgnoreCase("increase")) {
                  System.out.print("enter the incremented in fuel: ");
                  float posFuel = scanner.nextFloat();
                  car.addFuel(posFuel);
+
              } else {
                  System.out.print("enter the decrement in fuel: ");
                  float negFuel = scanner.nextFloat();
                  car.currentFuelInLiters -= negFuel;
              }
+
              car.getCurrentFuel();
          }
 
