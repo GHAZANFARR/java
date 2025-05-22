@@ -153,6 +153,5 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
          System.out.println(car.currentFuelInLiters);
          System.out.println(car.color);
          System.out.println(car.fuelType);
-
      }
  }
