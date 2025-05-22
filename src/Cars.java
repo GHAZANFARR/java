@@ -67,11 +67,11 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
          car.maxSpeed = scanner.nextFloat();
          scanner.nextLine();
 
-         System.out.print("enter the Current Fuel Level: ");
+         System.out.print("enter the Number of wheels in car: ");
          car.noOfWheels = scanner.nextInt();
          scanner.nextLine();
 
-         System.out.print("enter the Current Fuel Level: ");
+         System.out.print("enter the number of Seat: ");
          car.noOfSeats = scanner.nextInt();
          scanner.nextLine();
 
