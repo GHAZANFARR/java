@@ -12,13 +12,17 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
 
      int maxFuelCapacity;
 
+    float unitOfFuelFilledAtMax;
+
      float currentSpeed;
 
      float maxSpeed;
 
      String fuelType;
 
-     int fillMaxTank;
+     public void costing() {
+         System.out.println("costing till yet is: " + currentFuelInLiters * 110.2);
+     }
 
      public void drive() {
          if (currentFuelInLiters > 0) {
@@ -119,12 +123,13 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
                 car.getCurrentSpeed();
          }
 
-         boolean tankFill = false;
          System.out.println("do you want to fill the tank to max? (yes/no): ");
          String tankMax = scanner.nextLine();
 
          if (tankMax.equalsIgnoreCase("yes")) {
+             float fuelBeforeFill = car.currentFuelInLiters;
              car.currentFuelInLiters = car.maxFuelCapacity;
+             car.unitOfFuelFilledAtMax = car.maxFuelCapacity - fuelBeforeFill;
          } else {
              boolean fuelChange = false;
 
@@ -142,11 +147,17 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
                      System.out.print("enter the incremented in fuel: ");
                      float posFuel = scanner.nextFloat();
                      car.addFuel(posFuel);
+                     if (car.currentFuelInLiters > car.maxFuelCapacity) {
+                         car.currentFuelInLiters = car.maxFuelCapacity;
+                     }
 
                  } else {
                      System.out.print("enter the decrement in fuel: ");
                      float negFuel = scanner.nextFloat();
                      car.currentFuelInLiters -= negFuel;
+                     if (car.currentFuelInLiters < 0) {
+                         car.currentFuelInLiters = 0;
+                     }
                  }
 
                  car.getCurrentFuel();
@@ -156,21 +167,28 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
          System.out.print("does the driver drives the car?? (yes/no): ");
          String driving = scanner.nextLine();
 
-         boolean drive = false;
-         int i = 0;
+         boolean drive = false;    //has to make it to drive it in two ways.. either free way or limited by user
+
          if (driving.equalsIgnoreCase("yes")) {
              System.out.println("how many units did car drove?? : ");
              float units = scanner.nextFloat();
              scanner.nextLine();
-             for (i = 0; i < units; i++) {
+             int i = 0;
+             while(car.currentFuelInLiters > 0){
                  car.drive();
+                 i++;
              }
              System.out.println("car drove for total of " + i + " units.");
          }
 
-         System.out.println(car.currentSpeed);
-         System.out.println(car.currentFuelInLiters);
-         System.out.println(car.color);
-         System.out.println(car.fuelType);
+         car.costing();
+
+         System.out.println("current speed of car is: " + car.currentSpeed);
+         System.out.println();
+         System.out.println("current fuel in the car is: " + car.currentFuelInLiters);
+         System.out.println();
+         System.out.println("Color of the car is: " + car.color);
+         System.out.println();
+         System.out.println("Fuel type in car is: " + car.fuelType);
      }
  }
