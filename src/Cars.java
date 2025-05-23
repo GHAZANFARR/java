@@ -10,11 +10,15 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
 
      float currentFuelInLiters;
 
+     int maxFuelCapacity;
+
      float currentSpeed;
 
      float maxSpeed;
 
      String fuelType;
+
+     int fillMaxTank;
 
      public void drive() {
          if (currentFuelInLiters > 0) {
@@ -75,6 +79,10 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
          car.noOfSeats = scanner.nextInt();
          scanner.nextLine();
 
+         System.out.print("enter the max fuel capacity: ");
+         car.maxFuelCapacity = scanner.nextInt();
+         scanner.nextLine();
+
          System.out.print("enter the Current Speed of Car: ");
          car.currentSpeed = scanner.nextFloat();
          scanner.nextLine();
@@ -111,42 +119,53 @@ public class Cars { //taking it for an "Instance Variables And Methods" example
                 car.getCurrentSpeed();
          }
 
-         boolean fuelChange = false;
-         System.out.print("does the Fuel Levels of car change? (yes/no): ");
-         String yesOrNo = scanner.nextLine();
+         boolean tankFill = false;
+         System.out.println("do you want to fill the tank to max? (yes/no): ");
+         String tankMax = scanner.nextLine();
 
-         if (yesOrNo.equalsIgnoreCase("yes")) {
-             fuelChange = true;
-         }
-         if (fuelChange) {
-             System.out.print("does fuel increase or decrease: ");
-             String fuelChangeInLiters = scanner.nextLine();
+         if (tankMax.equalsIgnoreCase("yes")) {
+             car.currentFuelInLiters = car.maxFuelCapacity;
+         } else {
+             boolean fuelChange = false;
 
-             if (fuelChangeInLiters.equalsIgnoreCase("increase")) {
-                 System.out.print("enter the incremented in fuel: ");
-                 float posFuel = scanner.nextFloat();
-                 car.addFuel(posFuel);
+             System.out.print("does the Fuel Levels of car change? (yes/no): ");
+             String yesOrNo = scanner.nextLine();
 
-             } else {
-                 System.out.print("enter the decrement in fuel: ");
-                 float negFuel = scanner.nextFloat();
-                 car.currentFuelInLiters -= negFuel;
+             if (yesOrNo.equalsIgnoreCase("yes")) {
+                 fuelChange = true;
              }
+             if (fuelChange) {
+                 System.out.print("does fuel increase or decrease: ");
+                 String fuelChangeInLiters = scanner.nextLine();
 
-             car.getCurrentFuel();
+                 if (fuelChangeInLiters.equalsIgnoreCase("increase")) {
+                     System.out.print("enter the incremented in fuel: ");
+                     float posFuel = scanner.nextFloat();
+                     car.addFuel(posFuel);
+
+                 } else {
+                     System.out.print("enter the decrement in fuel: ");
+                     float negFuel = scanner.nextFloat();
+                     car.currentFuelInLiters -= negFuel;
+                 }
+
+                 car.getCurrentFuel();
+             }
          }
 
          System.out.print("does the driver drives the car?? (yes/no): ");
          String driving = scanner.nextLine();
 
          boolean drive = false;
+         int i = 0;
          if (driving.equalsIgnoreCase("yes")) {
              System.out.println("how many units did car drove?? : ");
              float units = scanner.nextFloat();
              scanner.nextLine();
-             for (int i = 0; i < units; i++) {
+             for (i = 0; i < units; i++) {
                  car.drive();
              }
+             System.out.println("car drove for total of " + i + " units.");
          }
 
          System.out.println(car.currentSpeed);
