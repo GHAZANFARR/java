@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Cars { // Instance Variables And Methods example
      int noOfWheels;
+     boolean start = false;
      String color;
      int noOfSeats;
      float currentFuelInLiters;
@@ -16,6 +17,15 @@ public class Cars { // Instance Variables And Methods example
 
      public void costing() {
          System.out.println("costing till yet is: " + currentFuelInLiters * FUEL_COST_PER_LITER);
+     }
+
+     public void carStart(){
+         if (currentFuelInLiters <= 0) {
+             System.out.println("car is out of fuel, cant drive");
+             start = false;
+         } else {
+             System.out.println("car has started... ready to go");
+         }
      }
 
      public void drive() {
@@ -57,13 +67,27 @@ public class Cars { // Instance Variables And Methods example
          Cars car = new Cars();
 
          collectCarAttributes(scanner, car);
-         handleSpeedChange(scanner, car);
-         handleFuelChange(scanner, car);
-         handleDriving(scanner, car);
+         start(scanner,car);
+         if(car.start) {
+             handleSpeedChange(scanner, car);
+             handleFuelChange(scanner, car);
+             handleDriving(scanner, car);
+         }
          car.costing();
          printCarSummary(car);
 
          scanner.close();
+     }
+
+     private static void start(Scanner scanner, Cars car) {
+
+         System.out.println("does car start??: (yes/no)");
+         String yesNo = scanner.nextLine();
+
+         if(yesNo.equalsIgnoreCase("yes")) {
+             car.start = true;
+             car.carStart();
+         }
      }
 
      private static void collectCarAttributes(Scanner scanner, Cars car) {
@@ -138,7 +162,7 @@ public class Cars { // Instance Variables And Methods example
                      float posFuel = scanner.nextFloat();
                      scanner.nextLine();
                      car.addFuel(posFuel);
-                     if (car.currentFuelInLiters > car.maxFuelCapacity) {
+                     if (car.currentFuelInLiters > car.maxFuelCapacity) { //stop overflow
                          car.currentFuelInLiters = car.maxFuelCapacity;
                      }
 
@@ -162,15 +186,13 @@ public class Cars { // Instance Variables And Methods example
          if (driving) {
              boolean driveTillEmpty = readYesNo(scanner, "does car go all the way until fuel run out? (yes/no): ");
              if (driveTillEmpty) {
+                 int i = 0;
                  while (car.currentFuelInLiters > 0) {
                      car.drive();
-                     int i = 0;
-                     while (car.currentFuelInLiters > 0) {
-                         car.drive();
-                         i++;
-                     }
-                     System.out.println("car drove for total of " + i + " units.");
+                     i++;
                  }
+                     System.out.println("car drove for total of " + i + " units.");
+
              } else {
                  System.out.print("how many units did car drove?? : ");
                  float units = scanner.nextFloat();
