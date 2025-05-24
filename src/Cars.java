@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Cars { // Instance Variables And Methods example
      int noOfWheels;
+     boolean start;
      String color;
      int noOfSeats;
      float currentFuelInLiters;
@@ -138,7 +139,7 @@ public class Cars { // Instance Variables And Methods example
                      float posFuel = scanner.nextFloat();
                      scanner.nextLine();
                      car.addFuel(posFuel);
-                     if (car.currentFuelInLiters > car.maxFuelCapacity) {
+                     if (car.currentFuelInLiters > car.maxFuelCapacity) { //stop overflow
                          car.currentFuelInLiters = car.maxFuelCapacity;
                      }
 
