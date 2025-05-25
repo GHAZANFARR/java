@@ -20,7 +20,7 @@ public class Cars { // Instance Variables And Methods example
 
      float maxSpeed;
 
-     String fuelType;
+     String fuelType; // not recommended to finalize();
 
      private static final float FUEL_COST_PER_LITER = 110.2f;
 
