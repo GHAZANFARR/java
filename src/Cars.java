@@ -3,14 +3,23 @@ import java.util.Scanner;
 
 public class Cars { // Instance Variables And Methods example
      int noOfWheels;
+
      boolean start = false;
+
      String color;
+
      int noOfSeats;
+
      float currentFuelInLiters;
+
      int maxFuelCapacity;
+
      float unitOfFuelFilledAtMax;
+
      float currentSpeed;
+
      float maxSpeed;
+
      String fuelType;
 
      private static final float FUEL_COST_PER_LITER = 110.2f;
