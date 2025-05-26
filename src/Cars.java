@@ -225,10 +225,3 @@ public class Cars { // Instance Variables And Methods example
      }
 
 }
-
-
-/*
-a = b
-b = c
-a = c
-*/
