@@ -13,9 +13,7 @@ public class EvenOddOOPS {
     public static void oddEven(int num) {
 
         String oddEve = (num%2) == 0 ? "even" : "odd";
-
         System.out.println(num + " is " + oddEve);
     }
-
 }
 
