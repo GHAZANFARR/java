@@ -18,6 +18,7 @@ public class Recursion {
     }
 
     public static int recursionFactorial(int input) {
+        /*ALWAYS SET THE LIMIT OF RECURSION FIRST AND THEN RETURN THE CONDITION IN LAST*/
 
         if(input == 1) {
             return 1;
