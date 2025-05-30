@@ -11,11 +11,11 @@ public class Password {
     public static void input(Scanner scanner){
 
         System.out.println("welcome to the program");
-        System.out.println("enter your name: ");
+        System.out.print("enter your name: ");
         String name = scanner.nextLine();
 
         System.out.println("Mr. " + name + " you will need to enter your password to continue");
-        System.out.println("enter your password: ");
+        System.out.print("enter your password: ");
         char[] passwordChar = scanner.nextLine().toCharArray();
         /*char[] save the password as character array .toCharArray turn input to values of character array*/
 
