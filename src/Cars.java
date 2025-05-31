@@ -2,16 +2,34 @@
 import java.util.Scanner;
 
 public class Cars { // Instance Variables And Methods example
-     int noOfWheels;
-     boolean start = false;
-     String color;
-     int noOfSeats;
-     float currentFuelInLiters;
-     int maxFuelCapacity;
-     float unitOfFuelFilledAtMax;
-     float currentSpeed;
-     float maxSpeed;
-     String fuelType; // not recommended to finalize();
+    int noOfWheels;
+    boolean start = false;
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Cars{");
+        sb.append("noOfWheels=").append(noOfWheels);
+        sb.append(", start=").append(start);
+        sb.append(", color='").append(color).append('\'');
+        sb.append(", noOfSeats=").append(noOfSeats);
+        sb.append(", currentFuelInLiters=").append(currentFuelInLiters);
+        sb.append(", maxFuelCapacity=").append(maxFuelCapacity);
+        sb.append(", unitOfFuelFilledAtMax=").append(unitOfFuelFilledAtMax);
+        sb.append(", currentSpeed=").append(currentSpeed);
+        sb.append(", maxSpeed=").append(maxSpeed);
+        sb.append(", fuelType='").append(fuelType).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
+    String color;
+    int noOfSeats;
+    float currentFuelInLiters;
+    int maxFuelCapacity;
+    float unitOfFuelFilledAtMax;
+    float currentSpeed;
+    float maxSpeed;
+    String fuelType; // not recommended to finalize();
 
      private static final float FUEL_COST_PER_LITER = 110.2f;
 
