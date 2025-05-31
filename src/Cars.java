@@ -164,6 +164,7 @@ public class Cars { // Instance Variables And Methods example
      }
 
      private static void handleFuelChange(Scanner scanner, Cars car) {
+
          boolean fillMax = readYesNo(scanner, "do you want to fill the tank to max? (yes/no): ");
          if (fillMax) {
              float fuelBeforeFill = car.currentFuelInLiters;
@@ -193,7 +194,6 @@ public class Cars { // Instance Variables And Methods example
                          car.currentFuelInLiters = 0;
                      }
                  }
-
                  car.getCurrentFuel();
              }
          }
@@ -241,5 +241,4 @@ public class Cars { // Instance Variables And Methods example
          String input = scanner.nextLine();
          return input.equalsIgnoreCase("yes");
      }
-
 }
