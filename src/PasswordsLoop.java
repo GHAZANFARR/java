@@ -3,7 +3,6 @@ import java.util.Scanner;
 class Functions{
 
     public static String firstCaps(String name){
-
         if (name == null || name.isEmpty()) {
             return name;
         }
