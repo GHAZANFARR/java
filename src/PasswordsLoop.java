@@ -59,6 +59,7 @@ public class PasswordsLoop {
     }
 
     public static void trialLoop(Scanner scanner, String passwordTrial) {
+
         while(true) {
             System.out.println("Enter your password to access further: ");
             char[] attempt = scanner.nextLine().toCharArray();
