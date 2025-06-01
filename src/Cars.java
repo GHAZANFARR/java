@@ -2,8 +2,6 @@
 import java.util.Scanner;
 
 public class Cars { // Instance Variables And Methods example
-    int noOfWheels;
-    boolean start = false;
 
     @Override
     public String toString() {
@@ -21,7 +19,8 @@ public class Cars { // Instance Variables And Methods example
         sb.append('}');
         return sb.toString();
     }
-
+    int noOfWheels;
+    boolean start = false;
     String color;
     int noOfSeats;
     float currentFuelInLiters;
