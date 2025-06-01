@@ -41,9 +41,8 @@ public class PasswordsLoop {
             System.out.println("Welcome Miss. " + capName);
         }
         System.out.println("Please set your password: ");
-        char[] userPassword = scanner.nextLine().toCharArray();
 
-        return userPassword;
+        return scanner.nextLine().toCharArray();
     }
 
 
@@ -51,11 +50,7 @@ public class PasswordsLoop {
 
         System.out.println("what is your gender: (M/F)");
         String gender = scanner.nextLine();
-        boolean genderBool = false;
-        if (gender.equalsIgnoreCase("M")) {
-             genderBool = true;
-        }
-        return genderBool;
+        return gender.equalsIgnoreCase("M");
     }
 
     public static void trialLoop(Scanner scanner, String passwordTrial) {
