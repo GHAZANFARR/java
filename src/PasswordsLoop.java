@@ -28,7 +28,6 @@ public class PasswordsLoop {
 
     public static String greetings(Scanner scanner){
         System.out.println("Welcome to the Password Loop");
-
         System.out.println("what is your good name?: ");
         return scanner.nextLine();
     }
@@ -41,7 +40,6 @@ public class PasswordsLoop {
             System.out.println("Welcome Miss. " + capName);
         }
         System.out.println("Please set your password: ");
-
         return scanner.nextLine().toCharArray();
     }
 
