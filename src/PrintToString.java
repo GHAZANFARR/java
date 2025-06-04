@@ -4,6 +4,9 @@ class students {
     String name;
     int age;
 
+    public students() {
+    }
+
     public students(String name, int age) {
         this.name = name;
         this.age = age;
@@ -32,7 +35,7 @@ class students {
     }
 }
 
-public class practice {
+public class PrintToString {
     public static void main(String[] args) {
         students student = new students();
 
