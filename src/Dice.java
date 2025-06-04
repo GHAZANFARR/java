@@ -2,8 +2,9 @@ import java.util.Scanner;
 
 public class Dice {
     public static void main(String[] args) {
-        System.out.println("welcome to the dice");
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("welcome to the dice");
         System.out.println("do you want to roll the dice?: (Y/N)");
         String task = scanner.nextLine();
         boolean command = task.equalsIgnoreCase("Y");
