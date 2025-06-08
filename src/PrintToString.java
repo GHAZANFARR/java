@@ -12,7 +12,6 @@ class students {
         this.age = age;
     }
 
-
     public String nameCall (){
         System.out.print("what is your name: ");
         Scanner scanner = new Scanner(System.in);
