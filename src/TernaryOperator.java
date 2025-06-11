@@ -16,7 +16,6 @@ public class TernaryOperator {
 
         //suggesting to use math library
         int     maxMin = first < second ? first : second;
-
         System.out.println(maxMin + " is the minimum number of the two");
     }
 }
