@@ -6,7 +6,7 @@ class Bank{
     float balance;
     String userName;
     String password;
-    int accountNumber;
+    String accountNumber;
     float requiredMoney;
 
     private float withdrawal(){
@@ -26,9 +26,13 @@ class Bank{
         return this.userName;
     }
 
-    public int getAccountNumber(Scanner scanner){
+    public void getAccountNumber(Scanner scanner){
         System.out.println("enter the account number(XXXX-XXXX-XXXX-XXXX): ");
-        return scanner.nextInt();
+        this.accountNumber = String.valueOf(scanner.nextLine());
+    }
+
+    public String getAccountNumber(){
+        return this.accountNumber;
     }
 }
 
@@ -43,7 +47,10 @@ public class BankAccount {
         if(!formatUserName.isEmpty()){
             System.out.println("Welcome to the BANK, " + formatUserName + ".");
         }
+        bank.getAccountNumber(scanner);
+        String accountInt = bank.getAccountNumber();
 
+        String AccNumFormat = formattedAccNum(accountInt);
 
     }
 
@@ -59,4 +66,24 @@ public class BankAccount {
         return username.substring(0,1).toUpperCase() + username.substring(1).toLowerCase();
     }
 
+    public static String formattedAccNum(String accountInt){
+
+        String accountNumInt = String.valueOf(accountInt);
+        if (accountNumInt == null || accountNumInt.isEmpty()){
+            try {
+                System.err.println("Error: INVALID Account number");
+                throw new IllegalArgumentException("Invalid Account Number");
+            }catch (IllegalArgumentException e){
+                throw new RuntimeException(e.getCause());
+            }
+        }
+        String rawInput = String.valueOf(accountInt);
+
+        rawInput = String.format("%16s", rawInput).replace(' ', '0');
+
+        return rawInput.substring(0,4) + "-" +
+                rawInput.substring(4,8) + "-" +
+                rawInput.substring(8,12) + "-" +
+                rawInput.substring(12,16);
+    }
 }
