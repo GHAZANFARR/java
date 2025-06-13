@@ -9,12 +9,11 @@ class Bank{
     String accountNumber;
     float requiredMoney;
 
-    private float withdrawal(){
+    public void withdrawal(){
         balance -= requiredMoney;
         if (balance < 0){
-            return balance = 0;
+            balance = 0;
         }
-        return balance;
     }
 
     public void getUserName(Scanner scanner){
@@ -52,6 +51,27 @@ public class BankAccount {
 
         String AccNumFormat = formattedAccNum(accountInt);
 
+        System.out.println("what operation you want to access (select the number of the operation): ");
+        System.out.println("1-withdrawal");
+        System.out.println("2-deposit");
+        System.out.println("3-loan laundering");
+        System.out.println("4-loan payment");
+        System.out.println("5-exit");
+        int operation = scanner.nextInt();
+
+        if (operation < 0 || operation > 5) {
+            try {
+                System.err.println("INVALID Operation");
+                throw new IllegalArgumentException("You have to recheck the list and enter correct input");
+            }catch(IllegalArgumentException e){
+                throw new RuntimeException(e);
+            }
+        }
+        do {
+            operationSwitch(bank);
+        }while (operation != 5);
+
+
     }
 
     public static String nameMod(String username) {
@@ -85,5 +105,18 @@ public class BankAccount {
                 rawInput.substring(4,8) + "-" +
                 rawInput.substring(8,12) + "-" +
                 rawInput.substring(12,16);
+    }
+
+    public static void operationSwitch (Bank bank, Scanner scanner){
+
+        switch (operation) {
+            case 1:
+                System.out.println("enter the money you want to withdraw: ");
+                bank.requiredMoney = scanner.nextFloat();
+                bank.withdrawal();
+                break;
+            case 2:
+
+        }
     }
 }
