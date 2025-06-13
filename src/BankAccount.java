@@ -43,7 +43,7 @@ public class BankAccount {
         bank.getUserName(scanner);
         String username = bank.getUserName();
         String formatUserName = nameMod(username);
-        if(!formatUserName.isEmpty()){
+        if (!formatUserName.isEmpty()) {
             System.out.println("Welcome to the BANK, " + formatUserName + ".");
         }
         bank.getAccountNumber(scanner);
@@ -51,6 +51,47 @@ public class BankAccount {
 
         String AccNumFormat = formattedAccNum(accountInt);
 
+        int operation;
+        do{
+           operation = operations(scanner);
+           opeProcess(operation, bank, scanner);
+        }while(operation != 5);
+    }
+
+    public static String nameMod(String username) {
+        if (username == null || username.isEmpty()) {
+            try {
+                System.err.println("ERROR: Name Field is Empty");
+                throw new IllegalArgumentException("username cannot be empty");
+            } catch (IllegalArgumentException e) {
+                throw new RuntimeException(e.getCause());
+            }
+        }
+        return username.substring(0, 1).toUpperCase() + username.substring(1).toLowerCase();
+    }
+
+    public static String formattedAccNum(String accountInt) {
+
+        String accountNumInt = String.valueOf(accountInt);
+        if (accountNumInt == null || accountNumInt.isEmpty()) {
+            try {
+                System.err.println("Error: INVALID Account number");
+                throw new IllegalArgumentException("Invalid Account Number");
+            } catch (IllegalArgumentException e) {
+                throw new RuntimeException(e.getCause());
+            }
+        }
+        String rawInput = String.valueOf(accountInt);
+
+        rawInput = String.format("%16s", rawInput).replace(' ', '0');
+
+        return rawInput.substring(0, 4) + "-" +
+                rawInput.substring(4, 8) + "-" +
+                rawInput.substring(8, 12) + "-" +
+                rawInput.substring(12, 16);
+    }
+
+    public static int operations(Scanner scanner){
         System.out.println("what operation you want to access (select the number of the operation): ");
         System.out.println("1-withdrawal");
         System.out.println("2-deposit");
@@ -63,57 +104,20 @@ public class BankAccount {
             try {
                 System.err.println("INVALID Operation");
                 throw new IllegalArgumentException("You have to recheck the list and enter correct input");
-            }catch(IllegalArgumentException e){
+            } catch (IllegalArgumentException e) {
                 throw new RuntimeException(e);
             }
         }
-        do {
-            operationSwitch(bank);
-        }while (operation != 5);
-
-
+        return operation;
     }
 
-    public static String nameMod(String username) {
-        if(username == null || username.isEmpty()){
-           try{
-               System.err.println("ERROR: Name Field is Empty");
-               throw new IllegalArgumentException("username cannot be empty");
-           } catch (IllegalArgumentException e) {
-               throw new RuntimeException(e.getCause());
-           }
-        }
-        return username.substring(0,1).toUpperCase() + username.substring(1).toLowerCase();
-    }
-
-    public static String formattedAccNum(String accountInt){
-
-        String accountNumInt = String.valueOf(accountInt);
-        if (accountNumInt == null || accountNumInt.isEmpty()){
-            try {
-                System.err.println("Error: INVALID Account number");
-                throw new IllegalArgumentException("Invalid Account Number");
-            }catch (IllegalArgumentException e){
-                throw new RuntimeException(e.getCause());
-            }
-        }
-        String rawInput = String.valueOf(accountInt);
-
-        rawInput = String.format("%16s", rawInput).replace(' ', '0');
-
-        return rawInput.substring(0,4) + "-" +
-                rawInput.substring(4,8) + "-" +
-                rawInput.substring(8,12) + "-" +
-                rawInput.substring(12,16);
-    }
-
-    public static void operationSwitch (Bank bank, Scanner scanner){
-
-        switch (operation) {
+    public static void opeProcess(int operation, Bank bank, Scanner scanner){
+        switch (operation){
             case 1:
-                System.out.println("enter the money you want to withdraw: ");
+                System.out.println("enter the money you want to withdraw: ₹");
                 bank.requiredMoney = scanner.nextFloat();
                 bank.withdrawal();
+                System.out.println("please collect your money from cashing counter with this receipt");
                 break;
             case 2:
 
