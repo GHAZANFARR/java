@@ -40,8 +40,7 @@ public class Encapsulation {
         Scanner scanner = new Scanner(System.in);
         Bike bike = new Bike();
 
-
-        bike.bikeStart();
-        String bikeBehave = bike.bikeStart() ? "bike is started" : "bike is at rest";
+        Boolean bikeBehave = bike.bikeStart();
+        String bikeCondition = bikeBehave ? "bike is started" : "bike is at rest";
     }
 }
