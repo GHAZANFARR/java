@@ -1,5 +1,3 @@
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Scanner;
 
 class Bike{
@@ -15,7 +13,7 @@ class Bike{
     private Boolean driverKeys(Scanner scanner){
         System.out.println("enter your key: (yes/no)");
         this.keys = scanner.nextLine().equalsIgnoreCase("yes");
-         return this.keys;
+        return this.keys;
     }
 
     private float getFuelLevels(Scanner scanner){
@@ -24,7 +22,7 @@ class Bike{
     }
 
     private boolean checkFuel(){
-        return this.fuelLevels > 0 ? true: false;
+        return this.fuelLevels > 0;
     }
 
 
@@ -40,7 +38,10 @@ public class Encapsulation {
         Scanner scanner = new Scanner(System.in);
         Bike bike = new Bike();
 
+        bike.initializeBike(scanner);
         Boolean bikeBehave = bike.bikeStart();
         String bikeCondition = bikeBehave ? "bike is started" : "bike is at rest";
+        System.out.println(bikeCondition);
+
     }
 }
