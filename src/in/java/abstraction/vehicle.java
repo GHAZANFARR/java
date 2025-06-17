@@ -1,6 +1,6 @@
 package in.java.abstraction;
 
-public abstract class vehicle {
+public abstract class vehicle implements Transport{
     private int noOfTires;
 
     public abstract void makeSound();
@@ -15,6 +15,11 @@ public abstract class vehicle {
 
     public void setNoOfTires(int noOfTires) {
         this.noOfTires = noOfTires;
+    }
+
+    @Override
+    public void getSetGo() {
+        System.out.println("started moving");
     }
 
     public void commute() {
