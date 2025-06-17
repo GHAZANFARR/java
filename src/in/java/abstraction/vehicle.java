@@ -1,7 +1,9 @@
 package in.java.abstraction;
 
-public class vehicle {
+public abstract class vehicle {
     private int noOfTires;
+
+    public abstract void makeSound();
 
     public vehicle(int noOfTires){
         this.noOfTires = noOfTires;
