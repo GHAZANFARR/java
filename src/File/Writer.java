@@ -5,7 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Writer {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String fileName = "java-test.txt";
         FileWriter write = null;
         try{
@@ -16,9 +16,7 @@ public class Writer {
         } catch (IOException e) {
             System.out.printf("something went wrong %s\n", e.getMessage());
         }finally {
-            if (write != null){
-                write.close();
-            }
+            if (write != null) write.close();
         }
     }
 }
