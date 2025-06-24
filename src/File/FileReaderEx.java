@@ -12,11 +12,11 @@ public class FileReaderEx {
             do {
                 read = reader.read();
                 if (read != -1) {
-                    System.out.println((char)read); //change it in char before printing
+                    System.out.print((char)read); //change it in char before printing
                 }
             } while (read != -1);
         }catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.print(e.getMessage());
         }
     }
 }
