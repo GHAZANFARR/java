@@ -6,7 +6,6 @@ public class Test {
 
         try{
             calculations.Calculate();
-            System.err.println("error in execution");
         } catch (RuntimeException e) {
             throw new RuntimeException(e);
         }
