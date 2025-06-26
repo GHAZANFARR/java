@@ -10,7 +10,7 @@ public class PasswordLoop {
         char[] passwordUser = passwordInput(scanner, capName, gender);
         System.out.println("Enter your password: ");
         char[] passwordTrial = passwordInput(scanner, capName, gender);
-        trialLoop(scanner, passwordUser);  // Changed to use passwordUser instead of converted string
+        trialLoop(scanner, passwordUser);
         Arrays.fill(passwordTrial, '0');
         Arrays.fill(passwordUser, '0');
     }
@@ -21,7 +21,6 @@ public class PasswordLoop {
         return scanner.nextLine();
     }
 
-    // Added missing firstCaps method
     public static String firstCaps(String name) {
         if (name == null || name.isEmpty()) {
             return name;
@@ -46,17 +45,17 @@ public class PasswordLoop {
         return gender.equalsIgnoreCase("M");
     }
 
-    public static void trialLoop(Scanner scanner, char[] correctPassword) {  // Changed parameter type
+    public static void trialLoop(Scanner scanner, char[] correctPassword) {
         while(true) {
             System.out.println("Enter your password to access further: ");
             char[] attempt = scanner.nextLine().toCharArray();
-            if (Arrays.equals(attempt, correctPassword)) {  // Now compares char[] directly
+            if (Arrays.equals(attempt, correctPassword)) {
                 System.out.println("Access granted!");
                 Arrays.fill(attempt, '0');
                 return;
             }
             System.out.println("<<WRONG PASSWORD>>");
-            Arrays.fill(attempt, '0');  // Clear the attempt from memory
+            Arrays.fill(attempt, '0');
         }
     }
 }
