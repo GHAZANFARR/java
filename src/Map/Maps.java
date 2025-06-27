@@ -16,7 +16,7 @@ public class Maps {
         income.remove("Ghazanfarr");
 
         for(Map.Entry<String, Integer> entry : income.entrySet()) {
-            System.out.println(entry.getKey() + " is earning" + entry.getValue() + ".");
+            System.out.println(entry.getKey() + " is earning " + entry.getValue() + ".");
         }
     }
 }
