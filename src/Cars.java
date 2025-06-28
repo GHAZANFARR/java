@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Cars { // Instance Variables And Methods example
 
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Cars{");
