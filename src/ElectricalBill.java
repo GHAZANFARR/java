@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ElectricBill {
+public class ElectricalBill {
     public static void main(String[] args) { //100= 4, 100-200 = 6, 200-400= 8, 400+ = 13/-
         Scanner scanner = new Scanner(System.in);
 
