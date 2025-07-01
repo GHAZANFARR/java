@@ -11,5 +11,9 @@ public class AccountNum {
         return AccountId.hashCode();
     }
 
-    if
+    public boolean equals(Object object){
+        if (object instanceof AccountNum){
+            return this.AccountId.equals(((AccountNum) object).AccountId);
+        }
+    }
 }
