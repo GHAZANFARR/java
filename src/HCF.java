@@ -11,8 +11,7 @@ public class HCF {
     public static int input1() {
         System.out.println("enter your first number: ");
         Scanner scanner = new Scanner(System.in);
-        int inp = scanner.nextInt();
-        return inp;
+        return scanner.nextInt();
     }
 
     public static int input2() {
@@ -37,10 +36,6 @@ public class HCF {
     }
 
     public static int least (int a, int b) {
-        if (a < b) {
-            return a;
-        } else {
-            return b;
-        }
+        return Math.min(a, b);
     }
 }
