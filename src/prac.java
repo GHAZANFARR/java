@@ -1,19 +1,20 @@
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class prac {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        List<String> list = new ArrayList<>();
+        String a = "my";
+        String b = "name";
+        String c = "is";
+        String d = "Ghazanfarr";
 
-        System.out.println("enter the file name to create: ");
-        String fileName = scanner.nextLine();
+        list.add(a);
+        list.add(b);
+        list.add(c);
+        list.add(d);
 
-        try (FileWriter fileWriter = new FileWriter(fileName);){
-            fileWriter.write("my name is bullu");
-            fileWriter.flush();
-        }catch (IOException e){
-            System.err.print("error" + e.getMessage());
-        }
+        System.out.println(list);
     }
+
 }
