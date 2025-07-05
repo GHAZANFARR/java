@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class prac {
@@ -13,6 +14,8 @@ public class prac {
         list.add(b);
         list.add(c);
         list.add(d);
+
+        list.sort(Collections.reverseOrder());
 
         System.out.println(list);
     }
