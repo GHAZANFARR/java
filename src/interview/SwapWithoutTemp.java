@@ -5,9 +5,6 @@ public class SwapWithoutTemp {
         int first = 10;
         int second = 5;
 
-
-
-
      first = first + second;
      second = first - second;
      first = first - second;
