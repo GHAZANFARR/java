@@ -28,7 +28,6 @@ public class Practice {
         name1.add("alice");
         name2.add("wassup");
         name2.add("alice");
-
         System.out.println(name);
         System.out.println(name1);
         System.out.println(name2);
