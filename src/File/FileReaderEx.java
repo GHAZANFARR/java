@@ -9,6 +9,7 @@ public class FileReaderEx {
 
         try (FileReader reader = new FileReader(fileName)) {
             int read; // cant declare it as char before checking
+
             do {
                 read = reader.read();
                 if (read != -1) {
