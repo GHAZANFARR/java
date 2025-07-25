@@ -6,7 +6,6 @@ import java.io.IOException;
 public class FileReaderEx {
     public static void main(String[] args) {
         String fileName = "java-test.txt";
-
         try (FileReader reader = new FileReader(fileName)) {
             int read; // cant declare it as char before checking
 
